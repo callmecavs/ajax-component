@@ -4,6 +4,8 @@
 
 A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that PJAXs its content.
 
+![Demo GIF](https://github.com/callmecavs/pjax-component/blob/master/demo.gif)
+
 ## Install
 
 ```sh
