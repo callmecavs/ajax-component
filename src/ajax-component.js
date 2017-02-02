@@ -21,16 +21,24 @@ class AJAXComponent extends window.HTMLElement {
     // this fires when the element loads the first time,
     // so we check for both the fetch attribute and the true value
     if (name === 'fetch' && val === 'true') {
-      // get the content attribute
-      const content = this.getAttribute('content')
+      // get attributes that are resources to load
+      const attrs = [
+        'content',
+        'style'
+      ].reduce((accum, current) => {
+        accum[current] = this.getAttribute(current)
+        return accum
+      }, {})
+
+      // TODO: build array of GET requests
 
       // make GET request
-      jax(content)
-        .then(res => {
-          // dump the HTML into the shadow root
-          this.shadow.innerHTML = res
-        })
-        .catch(error => console.log(error))
+      // jax(content)
+      //   .then(res => {
+      //     // dump the HTML into the shadow root
+      //     this.shadow.innerHTML = res
+      //   })
+      //   .catch(error => console.log(error))
     }
   }
 }
