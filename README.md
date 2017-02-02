@@ -1,15 +1,15 @@
-# pjax-component
+# ajax-component
 
-[![pjax-component on NPM](https://img.shields.io/npm/v/pjax-component.svg?style=flat-square)](https://www.npmjs.com/package/pjax-component) [![Standard JavaScript Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
+[![ajax-component on NPM](https://img.shields.io/npm/v/ajax-component.svg?style=flat-square)](https://www.npmjs.com/package/ajax-component) [![Standard JavaScript Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
-A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that PJAXs its content.
+A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that AJAXs its content.
 
-<img src="https://github.com/callmecavs/pjax-component/blob/master/demo.gif" width="320">
+<img src="https://github.com/callmecavs/ajax-component/blob/master/demo.gif" width="320">
 
 ## Install
 
 ```sh
-$ npm i pjax-component --save
+$ npm i ajax-component --save
 ```
 
 ## Use
@@ -20,21 +20,21 @@ Using your `name`, add the new element(s) to your HTML:
 
 ```html
 <!-- dont forget the closing tag -->
-<pjax-component content="path/to/html" fetch="false"></pjax-component>
+<ajax-component content="path/to/html" fetch="false"></ajax-component>
 ```
 
 Then, in your JavaScript, pass your `name` to the import:
 
 ```javascript
 // import the package
-import createPJAXComponent from 'pjax-component'
+import createAJAXComponent from 'ajax-component'
 
 // call the imported function
 // pass your element name as used in the HTML
-createPJAXComponent('pjax-component')
+createAJAXComponent('ajax-component')
 ```
 
-When you're ready for the element to PJAX its content, change the `fetch` attribute to `true`.
+When you're ready for the element to AJAX its content, change the `fetch` attribute to `true`.
 
 ```javascript
 document
