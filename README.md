@@ -4,7 +4,7 @@
 
 A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that AJAXs its content, style, and scripts.
 
-<img src="https://github.com/callmecavs/ajax-component/blob/master/demo.gif" width="320">
+<img src="https://github.com/callmecavs/ajax-component/blob/master/demo.gif" width="480">
 
 ## Features
 
@@ -89,6 +89,18 @@ const customEl = document.querySelector('ajax-component')
 // set the fetch attribute to true
 customEl.setAttribute('fetch', 'true')
 ```
+
+## Browser Support
+
+`pjax-component` makes use of the [Custom Elements v1 API](https://developers.google.com/web/fundamentals/getting-started/primers/customelements). As such, it runs natively in the following (see [caniuse](http://caniuse.com/#feat=custom-elementsv1)):
+
+* Chrome 54+
+* Safari 10.1+
+* Opera 42+
+
+## Roadmap
+
+- [ ] Explore polyfill options (potential impact on scoping)
 
 ## License
 
