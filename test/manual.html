@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <pjax-component
+      data-html="html, string, array"
+      data-css="css, string, array"
+      data-js="js, string, array">
+    </pjax-component>
+
     <script src="../dist/pjax-component.js"></script>
     <script>
       console.log('Module assigned to window.PjaxComponent. Logged below:')
@@ -15,13 +21,5 @@
       // define the Custom Element with the name 'pjax-component'
       PjaxComponent('pjax-component')
     </script>
-
-    <!-- use the element after its defined -->
-    <!-- can we load the script at the bottom? -->
-    <pjax-component
-      data-html="html, string, array"
-      data-css="css, string, array"
-      data-js="js, string, array">
-    </pjax-component>
   </body>
 </html>
