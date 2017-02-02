@@ -29,6 +29,10 @@
 
   ],
 
+  "dependencies": {
+    "jax.js": "^1.0.4"
+  },
+
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-plugin-external-helpers": "^6.18.0",
