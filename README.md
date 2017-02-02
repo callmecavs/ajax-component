@@ -2,9 +2,16 @@
 
 [![ajax-component on NPM](https://img.shields.io/npm/v/ajax-component.svg?style=flat-square)](https://www.npmjs.com/package/ajax-component) [![Standard JavaScript Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
-A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that AJAXs its content.
+A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that AJAXs its content, style, and scripts.
 
 <img src="https://github.com/callmecavs/ajax-component/blob/master/demo.gif" width="320">
+
+## Features
+
+* **HTTP2 first**. A component performs AJAX requests to fetch its HTML, CSS, and JS.
+* **Scoped CSS**. Via the Shadow DOM, `ajax-component` has native CSS scoping (no build step required).
+* **Scoped JavaScript**. Execute anything, with access to the global scope, but without polluting it.
+* **Familiar**. Same old HTML, CSS, and JS. Just new elements.
 
 ## Install
 
