@@ -14,10 +14,19 @@ class PJAXComponent extends HTMLElement {
       accum[attr] = this.getAttribute(attr)
       return accum
     }, {})
+  }
 
-    console.log('constructor')
-    console.log(this.shadow)
-    console.log(this.requests)
+  static get observedAttributes () {
+    return [
+      'fetch'
+    ]
+  }
+
+  attributeChangedCallback (name, prev, val) {
+    // check for fetch
+    if (name === 'fetch') {
+
+    }
   }
 }
 
