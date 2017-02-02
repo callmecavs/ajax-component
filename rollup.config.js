@@ -6,8 +6,11 @@ const info = require('./package.json')
 const config = {
   entry: 'src/pjax-component.js',
   plugins: [
-    resolve(),
-    babel()
+    resolve()
+
+    // babel breaks Custom Element defining currently
+    // https://github.com/babel/babel/issues/4480
+    // babel()
   ],
   targets: [
     {
