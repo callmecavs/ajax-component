@@ -1,6 +1,6 @@
 import jax from 'jax.js'
 
-class PJAXComponent extends HTMLElement {
+class PJAXComponent extends window.HTMLElement {
   constructor () {
     super()
 
@@ -36,19 +36,19 @@ class PJAXComponent extends HTMLElement {
 }
 
 const component = name => {
-  // quick feature check
-  if (!'customElements' in window) {
-    throw new Error('pjax-component: Custom Elements are not supported in the current browser.')
-  }
-
   // name sure the name has a dash,
   // this is a Custom Elements requirement
   if (name.indexOf('-') === -1) {
     throw new Error('pjax-component: Custom Element name must contain a dash.')
   }
 
-  // attach the element using the name provided
-  window.customElements.define(name, PJAXComponent)
+  // quick feature check
+  // attach the element using the name provided, or error out
+  if ('customElements' in window) {
+    window.customElements.define(name, PJAXComponent)
+  } else {
+    throw new Error('pjax-component: Custom Elements are not supported in the current browser.')
+  }
 }
 
 export default component
