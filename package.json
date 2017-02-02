@@ -6,7 +6,7 @@
   "module":      "dist/pjax-component.module.js",
   "jsnext:main": "dist/pjax-component.module.js",
 
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
 
   "repository": "callmecavs/pjax-component",
