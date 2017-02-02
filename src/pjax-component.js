@@ -8,12 +8,15 @@ class PJAXComponent extends HTMLElement {
     this.shadow = this.attachShadow({ mode: 'open' })
   }
 
+  // declare the attributes we need to watch
   static get observedAttributes () {
     return [
       'fetch'
     ]
   }
 
+  // handler for when ANY attribute is changed
+  // NOTE: might be able to simplify this check since we currently only watch 1 attribute
   attributeChangedCallback (name, prev, val) {
     // this fires when the element loads the first time,
     // so we check for both the fetch attribute and the true value
