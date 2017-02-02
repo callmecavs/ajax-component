@@ -4,7 +4,7 @@
 
 A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that PJAXs its content.
 
-![Demo GIF](https://github.com/callmecavs/pjax-component/blob/master/demo.gif)
+<img src="https://github.com/callmecavs/pjax-component/blob/master/demo.gif" width="320">
 
 ## Install
 
