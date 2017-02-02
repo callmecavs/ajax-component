@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve'
 const info = require('./package.json')
 
 const config = {
-  entry: 'src/pjax-component.js',
+  entry: 'src/ajax-component.js',
   plugins: [
     resolve()
 
@@ -16,7 +16,7 @@ const config = {
     {
       dest: info.main,
       format: 'umd',
-      moduleName: 'PjaxComponent'
+      moduleName: 'AjaxComponent'
     }, {
       dest: info.module,
       format: 'es'

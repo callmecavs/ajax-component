@@ -1,15 +1,15 @@
 {
-  "name":        "pjax-component",
-  "description": "A Custom Element that PJAXs its content.",
+  "name":        "ajax-component",
+  "description": "A Custom Element that AJAXs its content.",
 
-  "main":        "dist/pjax-component.js",
-  "module":      "dist/pjax-component.module.js",
-  "jsnext:main": "dist/pjax-component.module.js",
+  "main":        "dist/ajax-component.js",
+  "module":      "dist/ajax-component.module.js",
+  "jsnext:main": "dist/ajax-component.module.js",
 
   "version": "0.0.2",
   "license": "MIT",
 
-  "repository": "callmecavs/pjax-component",
+  "repository": "callmecavs/ajax-component",
 
   "author": {
     "name":  "Michael Cavalea",
@@ -29,7 +29,7 @@
     "component",
     "custom",
     "element",
-    "pjax",
+    "ajax",
     "web"
   ],
 

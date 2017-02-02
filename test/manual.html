@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <pjax-component content="ajax.html" fetch="false"></pjax-component>
+    <ajax-component content="ajax.html" fetch="false"></ajax-component>
 
-    <script src="../dist/pjax-component.js"></script>
+    <script src="../dist/ajax-component.js"></script>
     <script>
-      console.log('Module assigned to window.PjaxComponent. Logged below:')
-      console.log(PjaxComponent)
+      console.log('Module assigned to window.AjaxComponent. Logged below:')
+      console.log(AjaxComponent)
 
-      // define the Custom Element with the name 'pjax-component'
-      PjaxComponent('pjax-component')
+      // define the Custom Element with the name 'ajax-component'
+      AjaxComponent('ajax-component')
     </script>
   </body>
 </html>
