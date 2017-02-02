@@ -24,7 +24,8 @@ class PJAXComponent extends HTMLElement {
       // make GET request
       jax(content)
         .then(res => {
-          console.log(res)
+          // dump the HTML into the shadow root
+          this.shadow.innerHTML = res
         })
         .catch(error => console.log(error))
     }
