@@ -1,5 +1,7 @@
 # pjax-component
 
+[![pjax-component on NPM](https://img.shields.io/npm/v/pjax-component.svg?style=flat-square)](https://www.npmjs.com/package/pjax-component) [![Standard JavaScript Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
+
 A [Custom Element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) that PJAXs its content.
 
 ## Install
