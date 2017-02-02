@@ -11,6 +11,14 @@
     <script>
       console.log('Module assigned to window.PjaxComponent. Logged below:')
       console.log(PjaxComponent)
+
+      // define the Custom Element with the name 'pjax-component'
+      PjaxComponent('pjax-component')
     </script>
+
+    <!-- use the element after its defined -->
+    <!-- can we load the script at the bottom? -->
+    <pjax-component data-html="html, string, array" data-css="css, string, array" data-js="js, string, array">
+    </pjax-component>
   </body>
 </html>
