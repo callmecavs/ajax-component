@@ -24,7 +24,8 @@ class AJAXComponent extends window.HTMLElement {
       // get attributes that are resources to load
       const attrs = [
         'content',
-        'style'
+        'style',
+        'script'
       ].reduce((accum, current) => {
         accum[current] = this.getAttribute(current)
         return accum
@@ -50,18 +51,35 @@ class AJAXComponent extends window.HTMLElement {
       Promise
         .all(requests())
         .then(contents => {
-          // destructure out style and content
+          // destructure out attrs keys from above
           const [
             content,
-            style
+            style,
+            script
           ] = contents
 
-          // build the DOM
-          // inject into the shadow DOM in this order: style, content
-          const inject = `<style>${style}</style>${content}`
+          // build a <template> element to inject
+          const template = document.createElement('template')
 
-          // inject into the Shadow DOM
-          this.shadow.innerHTML = inject
+          // add the CSS first, wrapped in a <style> tag
+          template.innerHTML += `<style>${style}</style>`
+
+          // add the HTML
+          template.innerHTML += content
+
+          // add the JS last, in a <script> tag, as well as wrapped by an IIFE
+          // the IIFE ensures nothing leaks to the window
+          template.innerHTML += `
+            <script>
+              (() => {
+                ${script}
+              })()
+            </script>
+          `
+
+          // inject our DOM content into the cached Shadow DOM
+          // this is what is required to make the JS execute
+          this.shadow.appendChild(document.importNode(template.content, true))
         })
     }
   }
