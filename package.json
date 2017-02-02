@@ -1,20 +1,20 @@
 {
   "name":        "pjax-component",
-  "description": "A Web Component that lazy loads its content.",
+  "description": "A Custom Element that PJAXs its content.",
 
   "main":        "dist/pjax-component.js",
   "module":      "dist/pjax-component.module.js",
   "jsnext:main": "dist/pjax-component.module.js",
 
   "version": "0.0.1",
-  "license": "",
+  "license": "MIT",
 
-  "repository": "",
+  "repository": "callmecavs/pjax-component",
 
   "author": {
-    "name":  "",
-    "email": "",
-    "url":   ""
+    "name":  "Michael Cavalea",
+    "email": "callmecavs@gmail.com",
+    "url":   "http://callmecavs.com/"
   },
 
   "scripts": {
@@ -26,7 +26,11 @@
   },
 
   "keywords": [
-
+    "component",
+    "custom",
+    "element",
+    "pjax",
+    "web"
   ],
 
   "dependencies": {
