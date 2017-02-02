@@ -1,6 +1,6 @@
 {
   "name":        "pjax-component",
-  "description": "A lazy web component that loads HTML, CSS, and JS.",
+  "description": "A Web Component that lazy loads its content.",
 
   "main":        "dist/pjax-component.js",
   "module":      "dist/pjax-component.module.js",

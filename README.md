@@ -1,3 +1,3 @@
-# Pjax-component.js
+# pjax-component
 
-A lazy web component that loads HTML, CSS, and JS.
+A Web Component that lazy loads its content.
