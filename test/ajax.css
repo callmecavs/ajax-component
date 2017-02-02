@@ -1,0 +1,9 @@
+/* these are scoped, because they're in the Shadow DOM */
+
+.heading {
+  color: blue;
+}
+
+.text {
+  color: red;
+}
