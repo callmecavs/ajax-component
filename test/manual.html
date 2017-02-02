@@ -32,6 +32,18 @@
 
       // define the Custom Element with the name 'ajax-component'
       AjaxComponent('ajax-component')
+
+      let count = 0
+
+      // load each component on click
+      document.addEventListener('click', event => {
+        if (count > 2) {
+          return
+        }
+
+        document.querySelectorAll('ajax-component')[count].setAttribute('fetch', 'true')
+        count++
+      })
     </script>
   </body>
 </html>
