@@ -30,15 +30,39 @@ class AJAXComponent extends window.HTMLElement {
         return accum
       }, {})
 
-      // TODO: build array of GET requests
+      // build a function that returns an array of GET request Promises
+      const requests = () => Object
+        .keys(attrs)
+        .map(key => {
+          // get the path to resouce
+          const path = attrs[key]
 
-      // make GET request
-      // jax(content)
-      //   .then(res => {
-      //     // dump the HTML into the shadow root
-      //     this.shadow.innerHTML = res
-      //   })
-      //   .catch(error => console.log(error))
+          // if no path exists, resolve instantly, because there's nothing to load
+          if (!path) {
+            return Promise.resolve()
+          }
+
+          // otherwise request the resource
+          return jax(path)
+        })
+
+      // request all the resources, waiting for them all to finish
+      Promise
+        .all(requests())
+        .then(contents => {
+          // destructure out style and content
+          const [
+            content,
+            style
+          ] = contents
+
+          // build the DOM
+          // inject into the shadow DOM in this order: style, content
+          const inject = `<style>${style}</style>${content}`
+
+          // inject into the Shadow DOM
+          this.shadow.innerHTML = inject
+        })
     }
   }
 }
