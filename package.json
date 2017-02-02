@@ -6,7 +6,7 @@
   "module":      "dist/ajax-component.module.js",
   "jsnext:main": "dist/ajax-component.module.js",
 
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
 
   "repository": "callmecavs/ajax-component",
