@@ -1,19 +1,11 @@
+import jax from 'jax.js'
+
 class PJAXComponent extends HTMLElement {
   constructor () {
     super()
 
     // create a shadow root
     this.shadow = this.attachShadow({ mode: 'open' })
-
-    // cache request urls
-    this.requests = [
-      'data-html',
-      'data-css',
-      'data-js'
-    ].reduce((accum, attr) => {
-      accum[attr] = this.getAttribute(attr)
-      return accum
-    }, {})
   }
 
   static get observedAttributes () {
@@ -23,9 +15,18 @@ class PJAXComponent extends HTMLElement {
   }
 
   attributeChangedCallback (name, prev, val) {
-    // check for fetch
-    if (name === 'fetch') {
+    // this fires when the element loads the first time,
+    // so we check for both the fetch attribute and the true value
+    if (name === 'fetch' && val === 'true') {
+      // get the content attribute
+      const content = this.getAttribute('content')
 
+      // make GET request
+      jax(content)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(error => console.log(error))
     }
   }
 }
