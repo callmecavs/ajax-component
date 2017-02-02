@@ -23,30 +23,71 @@ $ npm i ajax-component --save
 
 Decide on a `name` for your element (it must contain a `-`).
 
-Using your `name`, add the new element(s) to your HTML:
+### HTML
+
+Using your `name`, add the new element to your markup:
 
 ```html
-<!-- dont forget the closing tag -->
-<ajax-component content="path/to/html" fetch="false"></ajax-component>
+<!-- note that a closing tag is required -->
+<ajax-component></ajax-component>
 ```
 
-Then, in your JavaScript, pass your `name` to the import:
+Then, add the these attributes to load your resources:
+
+| Attribute | Extension | Required | Optional |
+| :-------- | :-------: | :------: | :------: |
+| `content` | .html     |          | ✓        |
+| `style`   | .css      |          | ✓        |
+| `script`  | .js       |          | ✓        |
+
+```html
+<!-- will load HTML only -->
+<!-- while not technically required, scoped CSS and/or JS isn't useful without HTML -->
+<ajax-component content="path/to/file.html"></ajax-component>
+
+<!-- will load HTML content, scoped CSS, and scoped JS -->
+<ajax-component
+  content="path/to/file.html"
+  style="path/to/file.css"
+  script="path/to/file.js">
+</ajax-component>
+```
+
+Finally, add the `fetch` attribute to your element.
+
+It must have an initial value of `false` (or this wouldn't be an AJAX component).
+
+```html
+<ajax-component
+  fetch="false"
+  content="path/to/file.html"
+  style="path/to/file.css"
+  script="path/to/file.js">
+</ajax-component>
+```
+
+### JavaScript
+
+Using your `name`, in your JavaScript, pass it to the import:
 
 ```javascript
-// import the package
+// import the default export
+// this is a function that accepts an element name
 import createAJAXComponent from 'ajax-component'
 
 // call the imported function
-// pass your element name as used in the HTML
+// pass the element name as used in the HTML to create the Custom Element
 createAJAXComponent('ajax-component')
 ```
 
-When you're ready for the element to AJAX its content, change the `fetch` attribute to `true`.
+An element will AJAX its resources when the `fetch` attribute changes to `true`.
 
 ```javascript
-document
-  .getElementById('component')
-  .setAttribute('fetch', true)
+// selected the element we want to load
+const customEl = document.querySelector('ajax-component')
+
+// set the fetch attribute to true
+customEl.setAttribute('fetch', 'true')
 ```
 
 ## License
